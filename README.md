@@ -1,6 +1,6 @@
 # Bernoulli Reload 2026 - Relatório de Campanha
 
-Documentação técnica da metodologia de mensuração e da arquitetura de dados utilizada no relatório da campanha **Bernoulli Reload 2026**, realizada nos canais do Porvir entre **17 e 30 de agosto de 2026**.
+Documentação técnica da metodologia de mensuração e da arquitetura de dados utilizada no relatório da presença digital do **Bernoulli Reload 2026** nos canais do Porvir.
 
 ## 1. Contexto
 
@@ -12,40 +12,85 @@ Após o evento, o Porvir publicou um conteúdo editorial apresentando aprendizad
 
 https://porvir.org/gestao-escolar-ia-reload-2026/
 
-A campanha utiliza a audiência do Porvir, formada majoritariamente por profissionais ligados à educação, para ampliar a distribuição desse conteúdo por diferentes canais digitais.
+A ativação utiliza a audiência qualificada do Porvir para ampliar a presença do Bernoulli e distribuir conteúdos relacionados ao Reload em diferentes canais digitais.
 
-A ação não possui como objetivo principal a inscrição ou participação no evento, uma vez que o Reload 2026 já havia ocorrido.
+A análise não se limita à campanha de direcionamento para a matéria publicada no Porvir. O universo de mensuração passa a considerar todas as entregas Bernoulli/Reload identificadas nos canais analisados, incluindo conteúdos de pré-evento, cobertura do evento e pós-evento.
 
-O objetivo da mensuração é avaliar a capacidade da campanha de:
+## 2. Escopo temporal
 
-1. alcançar a audiência;
-2. gerar interação com as peças;
-3. direcionar usuários para o conteúdo publicado no Porvir;
-4. gerar consumo efetivo do conteúdo editorial.
-
-## 2. Período analisado
-
-Período oficial da campanha:
+A campanha de amplificação da matéria possui como período principal:
 
 **17/08/2026 a 30/08/2026**
 
-Os dados definitivos serão consolidados após o encerramento da campanha.
+Entretanto, os exports brutos das plataformas demonstraram a existência de entregas Bernoulli anteriores a 17/08, relacionadas ao pré-evento e à cobertura do Reload 2026.
 
-Durante o período de veiculação poderão ser utilizados dados parciais exclusivamente para construção, validação e testes do relatório.
+Por esse motivo, o relatório diferencia dois conceitos:
+
+- **período da campanha de amplificação da matéria**, de 17/08/2026 a 30/08/2026;
+- **universo total de entregas Bernoulli**, que pode incluir conteúdos publicados antes desse período quando relacionados diretamente ao Reload 2026.
+
+Os dados definitivos serão consolidados após o encerramento da campanha. Durante a construção do relatório poderão ser utilizados dados parciais apenas para validação de estrutura, métricas, filtros e visualizações.
 
 ## 3. Objetivo do relatório
 
-O relatório busca responder à seguinte questão:
+O relatório busca responder a duas questões complementares:
 
-> Qual foi a capacidade da campanha do Bernoulli Reload 2026 de alcançar a audiência qualificada do Porvir, gerar interação, direcioná-la ao conteúdo editorial e produzir consumo efetivo da matéria?
+> Qual foi o impacto da presença do Bernoulli Reload 2026 nos canais do Porvir em termos de exposição, interação e consumo de conteúdo?
+
+E, especificamente para a matéria publicada no Porvir:
+
+> Qual foi a capacidade das ativações com links parametrizados de direcionar usuários para o conteúdo editorial e gerar consumo efetivo da matéria?
 
 A análise é estruturada em quatro camadas:
 
 **Exposição → Interação → Tráfego → Consumo**
 
-## 4. Modelo de mensuração
+## 4. Universo de peças
 
-### 4.1. Exposição
+O inventário de peças não será definido exclusivamente pela planilha original de links parametrizados.
+
+A planilha inicial de UTMs é tratada como uma referência de tracking, mas não como inventário definitivo das entregas.
+
+O universo final de peças será formado por todas as publicações, anúncios, conteúdos de vídeo, disparos e ativações identificadas como relacionadas ao Bernoulli ou ao Reload 2026 nos dados brutos das plataformas.
+
+Isso inclui conteúdos que:
+
+- possuem UTM;
+- não possuem UTM;
+- possuem link de saída;
+- não possuem link de saída;
+- têm objetivo de tráfego;
+- têm objetivo de engajamento ou consumo de vídeo.
+
+## 5. Fases da campanha
+
+Cada peça poderá ser classificada por uma dimensão analítica chamada `fase_campanha`.
+
+Valores previstos:
+
+```text
+pre_evento
+cobertura_evento
+pos_evento
+```
+
+### 5.1. Pré-evento
+
+Conteúdos publicados antes do Reload 2026 com função de divulgação, contextualização ou preparação da audiência.
+
+### 5.2. Cobertura do evento
+
+Conteúdos publicados durante ou imediatamente relacionados ao evento, incluindo registros, entrevistas, bastidores e cobertura editorial.
+
+### 5.3. Pós-evento
+
+Conteúdos destinados a amplificar aprendizados, repercussões, entrevistas, vídeos e a matéria publicada no Porvir após a realização do Reload 2026.
+
+Essa classificação evita comparar diretamente peças com objetivos editoriais ou de mídia diferentes.
+
+## 6. Modelo de mensuração
+
+### 6.1. Exposição
 
 Mensura a distribuição das peças nos diferentes canais.
 
@@ -53,13 +98,15 @@ Dependendo da disponibilidade de cada plataforma, poderão ser utilizadas métri
 
 - alcance;
 - impressões;
+- visualizações;
 - entregas;
 - frequência;
 - e-mails enviados;
 - e-mails entregues;
-- aberturas.
+- aberturas;
+- reproduções de vídeo.
 
-### 4.2. Interação
+### 6.2. Interação
 
 Mensura a resposta da audiência às peças distribuídas.
 
@@ -69,14 +116,18 @@ Dependendo do canal, poderão ser utilizadas:
 - curtidas;
 - comentários;
 - compartilhamentos;
+- salvamentos;
+- respostas;
 - engajamentos;
 - cliques;
 - cliques no link;
 - taxa de engajamento;
 - CTR;
-- CTOR.
+- CTOR;
+- ThruPlays;
+- percentuais de consumo de vídeo.
 
-### 4.3. Tráfego
+### 6.3. Tráfego
 
 Mensura os usuários efetivamente direcionados para o conteúdo publicado no Porvir.
 
@@ -93,9 +144,11 @@ Principais métricas:
 - conteúdo da campanha;
 - identificação da peça.
 
-Os parâmetros UTM serão utilizados para identificar os acessos atribuíveis às ativações da campanha.
+Os parâmetros UTM serão utilizados para identificar os acessos atribuíveis às ativações com links parametrizados.
 
-### 4.4. Consumo
+Uma peça pode fazer parte do relatório de exposição e interação mesmo quando não possui URL de saída ou UTM.
+
+### 6.4. Consumo
 
 Mensura a qualidade do acesso após a chegada ao conteúdo.
 
@@ -112,27 +165,43 @@ O evento principal configurado no GA4 relacionado ao consumo de 50% do conteúdo
 
 Para fins de comunicação no relatório, esse indicador deverá ser apresentado preferencialmente como **Leitura de 50%** ou equivalente, evitando utilizar apenas o termo genérico "conversão".
 
-## 5. Canais da campanha
-
-A campanha utiliza diferentes pontos de distribuição dentro do ecossistema do Porvir.
+## 7. Canais analisados
 
 ### Instagram
 
-- Stories;
 - Feed;
-- direcionamento por link da bio.
+- Reels;
+- Stories;
+- link da bio.
 
 ### Facebook
 
-- Feed.
+- Feed;
+- demais publicações Bernoulli identificadas no export da plataforma.
 
 ### LinkedIn
 
-- Feed.
+- Feed;
+- demais publicações Bernoulli identificadas no export da plataforma.
 
 ### Meta Ads
 
-- impulsionamento e mídia paga relacionada às peças da campanha.
+A mídia paga possui objetivos diferentes e deverá ser segmentada analiticamente.
+
+Campanhas identificadas:
+
+```text
+(2026)Bernoulli Tráfego - Post 1
+(2026)Bernoulli Engajamento - Reel 1
+(2026)Bernoulli Engajamento - Reel 2
+(2026)Bernoulli Engajamento - Reel 3
+```
+
+A campanha de tráfego possui link de saída para a matéria.
+
+Os três Reels de engajamento não possuem link de saída de forma intencional. O objetivo dessas peças é consumo e interação com o vídeo dentro do ambiente da Meta.
+
+Por isso, os Reels não devem ser avaliados pelos mesmos KPIs da campanha de tráfego.
 
 ### WhatsApp
 
@@ -147,13 +216,25 @@ Distribuição em comunidades temáticas do Porvir:
 
 Distribuição por e-mail marketing para a base do Porvir.
 
-## 6. Arquitetura de dados
+## 8. Fontes de dados
 
-O relatório utiliza duas categorias principais de fontes.
+O relatório utiliza três categorias principais de fonte.
 
-### 6.1. Google Sheets
+### 8.1. Exports brutos das plataformas
 
-As métricas das plataformas que não possuem integração automatizada com o Looker Studio serão coletadas manualmente e armazenadas em Google Sheets.
+Os exports das plataformas são utilizados para:
+
+- identificar o universo completo de peças Bernoulli;
+- validar datas de publicação;
+- preservar IDs técnicos das publicações;
+- coletar métricas de exposição e interação;
+- localizar entregas que não constavam na planilha inicial de links.
+
+Os exports brutos devem ser preservados sem alterações como evidência da origem dos dados.
+
+### 8.2. Google Sheets
+
+As métricas utilizadas no Looker Studio serão organizadas manualmente em Google Sheets.
 
 Isso inclui, conforme disponibilidade:
 
@@ -164,11 +245,9 @@ Isso inclui, conforme disponibilidade:
 - Newsletter;
 - Meta Ads.
 
-Como a campanha possui duração limitada, a coleta manual foi escolhida para evitar a contratação e configuração de conectores pagos exclusivamente para um período curto de análise.
+Como o projeto possui duração limitada, a coleta manual foi escolhida para evitar contratação e configuração de conectores pagos exclusivamente para uma campanha curta.
 
-Os dados poderão ser inseridos parcialmente durante a construção do relatório e substituídos pelos valores definitivos após o encerramento da campanha.
-
-### 6.2. Google Analytics 4
+### 8.3. Google Analytics 4
 
 O GA4 será conectado diretamente ao Looker Studio.
 
@@ -185,20 +264,16 @@ Será utilizado para analisar:
 - evento de leitura de 50%;
 - tempo médio de engajamento.
 
-## 7. Fluxo de dados
-
-A arquitetura simplificada do projeto é:
+## 9. Fluxo de dados
 
 ```text
-Instagram
-Facebook
-LinkedIn
-Newsletter
-WhatsApp
-Meta Ads
+Exports das plataformas
         |
         v
-Coleta manual
+Identificação das peças Bernoulli
+        |
+        v
+Normalização e coleta manual
         |
         v
 Google Sheets
@@ -224,9 +299,9 @@ Looker Studio
 
 O Looker Studio funciona como camada final de visualização e análise.
 
-## 8. Estrutura prevista do Google Sheets
+## 10. Estrutura do Google Sheets
 
-A estrutura inicial prevista é:
+Estrutura atual:
 
 ```text
 01_pecas
@@ -236,18 +311,37 @@ A estrutura inicial prevista é:
 05_whatsapp
 06_newsletter
 07_meta_ads
-08_resumo
 ```
 
-A aba `01_pecas` funcionará como cadastro mestre das peças e parâmetros de campanha.
+A aba `01_pecas` funciona como cadastro mestre das entregas da campanha.
 
-As demais abas armazenarão as métricas coletadas em cada plataforma.
+As demais abas armazenam as métricas específicas de cada plataforma.
 
-A estrutura definitiva das colunas será documentada separadamente após validação das métricas disponíveis em cada canal.
+Uma aba consolidada adicional somente será criada se houver necessidade analítica que não possa ser resolvida diretamente no Looker Studio.
 
-## 9. Identificação das peças
+## 11. Cadastro mestre de peças
 
-Sempre que possível, as peças serão identificadas utilizando os parâmetros:
+A aba `01_pecas` deverá conter, quando disponível:
+
+- ID interno da peça;
+- canal;
+- grupo de canal;
+- tipo de distribuição;
+- fase da campanha;
+- data de publicação;
+- parâmetros UTM originais;
+- parâmetros normalizados;
+- URL de destino;
+- URL parametrizada;
+- link encurtado;
+- status de tracking;
+- observações técnicas.
+
+Quando os exports fornecerem identificadores técnicos da plataforma, como ID da publicação ou permalink, esses dados poderão ser preservados nas abas específicas para facilitar auditoria e rastreabilidade.
+
+## 12. Identificação das peças e UTMs
+
+Sempre que possível, as peças com tráfego para o site serão identificadas utilizando:
 
 ```text
 utm_source
@@ -258,17 +352,13 @@ utm_content
 utm_id
 ```
 
-Esses parâmetros permitem identificar diferentes dimensões da distribuição, como:
+Entretanto, a presença de UTM não é requisito para uma peça pertencer ao universo Bernoulli.
 
-- plataforma;
-- canal;
-- campanha;
-- posicionamento;
-- comunidade;
-- formato;
-- peça.
+A regra metodológica adotada é:
 
-## 10. Normalização das UTMs
+> UTM identifica e atribui tráfego. O universo da campanha é definido pelas entregas Bernoulli identificadas nas plataformas.
+
+## 13. Normalização das UTMs
 
 A análise preliminar dos links identificou diferenças na nomenclatura das campanhas entre alguns canais.
 
@@ -280,15 +370,13 @@ reload-2026-newsletter22826
 reload-2026-linkedin
 ```
 
-Essas diferenças deverão ser consideradas na construção dos filtros do GA4 e do Looker Studio.
+Essas diferenças deverão ser consideradas nos filtros do GA4 e do Looker Studio.
 
-Não será considerado apenas um único valor de `utm_campaign` para identificar todo o tráfego da campanha.
+A camada analítica poderá utilizar uma campanha normalizada, preservando simultaneamente os valores originais registrados no GA4.
 
-## 11. Inconsistência identificada no LinkedIn
+## 14. Inconsistência identificada no LinkedIn
 
-Foi identificada uma inconsistência no link parametrizado utilizado para LinkedIn.
-
-O link contém:
+Foi identificada uma inconsistência no link parametrizado utilizado para LinkedIn:
 
 ```text
 utm_source=instagram
@@ -296,11 +384,9 @@ utm_campaign=reload-2026-linkedin
 utm_content=linkedin
 ```
 
-Embora `utm_source` indique Instagram, os parâmetros `utm_campaign` e `utm_content` permitem identificar o tráfego relacionado ao LinkedIn.
+Embora `utm_source` indique Instagram, `utm_campaign` e `utm_content` permitem identificar o tráfego relacionado ao LinkedIn.
 
-Para preservar a consistência histórica dos dados durante a campanha, a análise deverá considerar essa inconsistência por meio de normalização no relatório.
-
-O tráfego cuja campanha seja identificada como:
+O tráfego cuja campanha seja:
 
 ```text
 reload-2026-linkedin
@@ -308,9 +394,60 @@ reload-2026-linkedin
 
 deverá ser classificado analiticamente como **LinkedIn**, independentemente do valor registrado em `utm_source`.
 
-## 12. Tráfego da campanha e tráfego total
+## 15. Meta Ads e normalização de origem
 
-O conteúdo publicado no Porvir pode receber acessos provenientes de fontes não diretamente relacionadas à campanha, incluindo:
+A campanha de tráfego Meta Ads utiliza:
+
+```text
+utm_source=instagram
+utm_medium=paid_social
+utm_campaign=campanha_reload_2026
+utm_term=meta_porvir
+utm_content=image_ad
+utm_id=img_01
+```
+
+O valor original de `utm_source` será preservado, mas a combinação `paid_social` + `meta_porvir` permite classificar essa origem analiticamente como **Meta Ads**.
+
+As campanhas de Reels não possuem links de saída e, portanto, não entram na atribuição de tráfego do GA4.
+
+## 16. Presença global versus tráfego atribuível
+
+O relatório deverá separar duas perspectivas.
+
+### 16.1. Presença global Bernoulli
+
+Considera todas as entregas relacionadas ao Bernoulli Reload 2026 identificadas nos canais do Porvir.
+
+Pode incluir:
+
+- conteúdos sem link;
+- vídeos;
+- cobertura do evento;
+- conteúdos de pré-evento;
+- conteúdos de pós-evento;
+- mídia paga de engajamento.
+
+Essa perspectiva mede principalmente exposição, interação e consumo de mídia.
+
+### 16.2. Tráfego atribuível à matéria
+
+Considera somente acessos que possam ser relacionados à matéria por meio dos dados observáveis no GA4 e dos parâmetros de campanha.
+
+Essa perspectiva mede:
+
+- usuários;
+- sessões;
+- visualizações;
+- leitura de 50%;
+- tempo médio de engajamento;
+- qualidade do tráfego.
+
+As duas perspectivas não devem ser somadas como se representassem a mesma etapa do funil.
+
+## 17. Tráfego da campanha e tráfego total da matéria
+
+A matéria pode receber acessos provenientes de fontes não diretamente relacionadas às ativações Bernoulli, incluindo:
 
 - Organic Search;
 - Direct;
@@ -322,15 +459,13 @@ Por isso, o relatório deverá distinguir:
 
 **Tráfego total da matéria**
 
-e
+versus
 
-**Tráfego atribuível aos links parametrizados da campanha Bernoulli Reload 2026**
+**Tráfego atribuível às ativações Bernoulli com links parametrizados**
 
-Essa separação permite analisar a participação da campanha na audiência total gerada pelo conteúdo.
+Essa separação permite analisar o peso da campanha sobre a audiência total do conteúdo.
 
-## 13. Indicadores de qualidade
-
-Além das métricas tradicionais de mídia, o projeto prioriza indicadores capazes de demonstrar consumo efetivo do conteúdo.
+## 18. Indicadores de qualidade
 
 ### Taxa de leitura de 50%
 
@@ -342,30 +477,30 @@ Usuários que atingiram 50% do conteúdo
 Usuários que acessaram o conteúdo
 ```
 
-O cálculo definitivo deverá respeitar a implementação e a granularidade do evento existente no GA4 para evitar diferenças entre usuários únicos e contagem de eventos.
+O cálculo definitivo deverá respeitar a implementação e a granularidade do evento existente no GA4, evitando misturar usuários únicos com contagem de eventos.
 
 ### Tempo médio de engajamento
 
-O tempo médio de engajamento será utilizado para avaliar quanto tempo os usuários permaneceram efetivamente envolvidos com o conteúdo.
+O tempo médio de engajamento será utilizado para avaliar quanto tempo os usuários permaneceram efetivamente envolvidos com a matéria.
 
 Sempre que possível, essa métrica será analisada por canal de aquisição.
 
-## 14. Meta Ads
+## 19. Métricas de Meta Ads
 
-Para mídia paga, serão priorizadas métricas como:
+### Campanha de tráfego
+
+Priorizar:
 
 - investimento;
 - alcance;
 - impressões;
 - frequência;
 - cliques no link;
+- Landing Page Views;
 - CTR;
-- CPC;
-- Landing Page Views.
+- CPC.
 
-Quando tecnicamente possível, os dados do Meta Ads serão relacionados ao comportamento observado no GA4.
-
-Isso permitirá análises adicionais como:
+Quando tecnicamente possível, poderão ser calculados indicadores como:
 
 ```text
 Investimento
@@ -373,13 +508,29 @@ Investimento
 Leituras de 50%
 ```
 
-resultando em um indicador de **custo por leitura qualificada**.
+resultando em custo por leitura qualificada.
 
-Esse indicador somente deverá ser utilizado quando houver segurança suficiente na atribuição entre a mídia e o comportamento registrado no GA4.
+### Campanhas de Reels
 
-## 15. WhatsApp
+Priorizar:
 
-As comunidades de WhatsApp possuem links parametrizados individualmente.
+- investimento;
+- alcance;
+- impressões;
+- frequência;
+- reproduções;
+- visualizações em 25%;
+- visualizações em 50%;
+- visualizações em 75%;
+- visualizações em 95%;
+- visualizações em 100%;
+- ThruPlays;
+- custo por ThruPlay;
+- interações.
+
+## 20. WhatsApp
+
+As comunidades possuem links parametrizados individualmente.
 
 Isso possibilita comparar o tráfego e o consumo do conteúdo entre:
 
@@ -388,15 +539,17 @@ Isso possibilita comparar o tráfego e o consumo do conteúdo entre:
 - Socioemocional;
 - Antirracista.
 
-Mesmo quando métricas tradicionais de alcance ou impressão não estiverem disponíveis, o GA4 poderá ser utilizado para avaliar o resultado gerado pelos links de cada comunidade.
+Mesmo quando métricas tradicionais de alcance ou impressão não estiverem disponíveis, o GA4 poderá ser utilizado para avaliar os acessos gerados pelos links de cada comunidade.
 
-## 16. Estrutura prevista do relatório
-
-O relatório no Looker Studio deverá ser organizado inicialmente nas seguintes áreas:
+## 21. Estrutura prevista do relatório
 
 ### Visão geral
 
-Principais indicadores consolidados da campanha.
+Principais indicadores consolidados da presença Bernoulli e da campanha.
+
+### Linha do tempo e fases
+
+Separação entre pré-evento, cobertura e pós-evento, quando útil para interpretação.
 
 ### Redes sociais
 
@@ -404,7 +557,7 @@ Desempenho das peças orgânicas distribuídas em Instagram, Facebook e LinkedIn
 
 ### Meta Ads
 
-Desempenho da mídia paga e eficiência na geração de tráfego.
+Separação entre campanhas de geração de tráfego e campanhas de consumo de vídeo.
 
 ### Newsletter e WhatsApp
 
@@ -416,13 +569,13 @@ Aquisição observada no GA4 e participação dos diferentes canais.
 
 ### Qualidade do consumo
 
-Análise de leitura de 50%, taxa de leitura e tempo médio de engajamento.
+Leitura de 50%, taxa de leitura e tempo médio de engajamento.
 
-## 17. Limitações metodológicas
+## 22. Limitações metodológicas
 
 O relatório mede principalmente o impacto digital **observável e atribuível** aos dados disponíveis.
 
-Os parâmetros UTM permitem identificar acessos originados diretamente dos links parametrizados da campanha.
+Os parâmetros UTM permitem identificar acessos originados diretamente dos links parametrizados.
 
 Entretanto, não é possível atribuir integralmente comportamentos indiretos.
 
@@ -443,13 +596,11 @@ Acessa a matéria por outro canal
 
 Nesse cenário, o acesso poderá ser atribuído pelo GA4 a Organic Search, Direct ou outro canal, mesmo que a exposição inicial à campanha tenha influenciado o comportamento.
 
+Da mesma forma, conteúdos sem link podem gerar impacto de marca, informação ou lembrança sem produzir um acesso diretamente atribuível.
+
 Portanto, os resultados não devem ser interpretados como mensuração absoluta de causalidade.
 
-O relatório representa o impacto mensurável por meio das plataformas, dos links parametrizados e do comportamento registrado no GA4.
-
-## 18. Princípio metodológico
-
-O projeto utiliza o seguinte modelo como base para interpretação dos resultados:
+## 23. Princípio metodológico
 
 ```text
 EXPOSIÇÃO
@@ -464,39 +615,44 @@ TRÁFEGO
 CONSUMO
 ```
 
-O objetivo não é avaliar apenas o volume de impressões, alcance ou interações isoladamente.
+Nem todas as peças percorrem obrigatoriamente todas as etapas.
 
-A análise busca compreender a capacidade da campanha de transformar distribuição de mídia em acesso e, posteriormente, em consumo efetivo do conteúdo editorial.
+Um Reel sem link pode gerar exposição, interação e consumo de vídeo, mas não tráfego direto para o site.
 
-## 19. Ferramentas
+Uma peça de tráfego pode ser avaliada até a etapa de consumo da matéria.
+
+O objetivo é respeitar o papel de cada formato e evitar comparações entre KPIs de objetivos diferentes.
+
+## 24. Ferramentas
 
 - Google Analytics 4
 - Google Sheets
 - Looker Studio
+- Meta Business Suite
 - Meta Ads Manager
-- Plataformas de Social Media
-- Plataforma de E-mail Marketing
+- plataformas de Social Media
+- plataforma de e-mail marketing
 - GitHub
 
-## 20. Status do projeto
+## 25. Status do projeto
 
-**Fase atual:** planejamento e estruturação da mensuração.
+**Fase atual:** estruturação e coleta de dados.
 
-Próximas etapas:
+Etapas em andamento:
 
-1. definir a estrutura definitiva do Google Sheets;
-2. definir as métricas disponíveis por canal;
-3. inserir dados parciais para desenvolvimento;
-4. conectar o Google Sheets ao Looker Studio;
-5. conectar o GA4 ao Looker Studio;
-6. validar as UTMs no GA4;
-7. validar o evento de leitura de 50%;
-8. construir os campos calculados;
+1. inventariar todas as peças Bernoulli nos exports das plataformas;
+2. classificar as peças por fase da campanha;
+3. atualizar a tabela mestre `01_pecas`;
+4. alimentar as abas específicas de cada canal;
+5. validar as UTMs no GA4;
+6. validar o evento de leitura de 50%;
+7. conectar Google Sheets e GA4 ao Looker Studio;
+8. construir campos calculados e normalizações;
 9. desenvolver as visualizações;
-10. substituir os dados parciais pelos dados definitivos após 30/08/2026;
+10. substituir dados parciais pelos dados definitivos após 30/08/2026;
 11. validar os resultados;
 12. consolidar as análises finais.
 
-## 21. Responsabilidade técnica
+## 26. Responsabilidade técnica
 
-Projeto de mensuração, análise e estruturação de dados desenvolvido pela **Ad Rock Digital Mkt** para suporte ao relatório da campanha Bernoulli Reload 2026 realizada nos canais do Porvir.
+Projeto de mensuração, análise e estruturação de dados desenvolvido pela **Ad Rock Digital Mkt** para suporte ao relatório da presença do Bernoulli Reload 2026 nos canais do Porvir.
